@@ -1,120 +1,220 @@
 <x-frontend-layout>
-
-
-    <!-- Shop Section start  -->
-    <section class="shop-section section-padding fix pt-0">
+    <main class="mt-5">
         <div class="container">
-            <div class="section-title-area">
-                <div class="section-title">
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Featured Books</h2>
-                </div>
-                <a href="shop.html" class="theme-btn transparent-btn wow fadeInUp" data-wow-delay=".5s">Explore More <i
-                        class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
-            <div class="swiper book-slider">
-                <div class="swiper-wrapper">
-                    @foreach ($books as $book)
+            <h2>Top Books</h2>
 
-                    <div class="swiper-slide">
-                        <div class="shop-box-items style-2">
-                            <div class="book-thumb center">
-                                <a href="{{route("book.view", $book->slug)}}"><img src="assets/img/book/01.png" alt="img"></a>
-                                <ul class="post-box">
-                                    {{-- <li>
-                                        Hot
-                                    </li>
-                                    <li>
-                                        -30%
-                                    </li> --}}
-                                </ul>
-                                <ul class="shop-icon d-grid justify-content-center align-items-center">
-                                    <li>
-                                        <a href="/add-cart"><i class="far fa-heart"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="/add-cart">
-                                            <img class="icon" src="assets/img/icon/shuffle.svg" alt="svg-icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/add-cart"><i class="far fa-eye"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="shop-content">
-                                <h5> {{$book->category->name}} </h5>
-                                <h3><a href="/add-cart">{{$book->title}}</a></h3>
-                                <ul class="price-list">
-                                    <li>${{$book->price}}</li>
-                                    {{-- <li>
-                                        <del>$39.99</del>
-                                    </li> --}}
-                                </ul>
-                                <ul class="author-post">
-                                    <li class="authot-list">
-                                        <span class="thumb">
-                                            <img src="assets/img/testimonial/client-1.png" alt="img">
-                                        </span>
-                                        <span class="content">{{$book->author->first_name}}</span>
-                                    </li>
-                                    <li class="star">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="shop-button">
-                                <a href="/add-cart" class="theme-btn"><i
-                                        class="fa-solid fa-basket-shopping"></i> Add To Cart</a>
-                            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#" class="btn btn-primary">Buy
+                                Now</a>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#"
+                                class="btn btn-outline-secondary">Add to Wishlist</a>
                         </div>
                     </div>
-                    @endforeach
 
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section start  -->
-    <section class="team-section fix section-padding pt-0 margin-bottom-30">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Featured Author</h2>
-                <p class="wow fadeInUp" data-wow-delay=".5s">Interdum et malesuada fames ac ante ipsum primis in
-                    faucibus. <br> Donec at nulla nulla. Duis posuere ex lacus</p>
-            </div>
-            <div class="array-button">
-                <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
-                <button class="array-next"><i class="fal fa-arrow-right"></i></button>
-            </div>
-            <div class="swiper team-slider">
-                <div class="swiper-wrapper">
-                    @foreach ($authors as $author)
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/01.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="/author/{{$author->id}}">{{$author->first_name}}</a></h6>
-                                <p>{{count($author->books)}} Published Books</p>
-                            </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/2/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#" class="btn btn-primary">Buy
+                                Now</a>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#"
+                                class="btn btn-outline-secondary">Add to Wishlist</a>
                         </div>
                     </div>
-                    @endforeach
+
+                </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/1/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#" class="btn btn-primary">Buy
+                                Now</a>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#"
+                                class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/7/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#" class="btn btn-primary">Buy
+                                Now</a>
+                            <a data-bs-toggle="modal" data-bs-target="#cardModal" href="#"
+                                class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                            <a href="#" class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/2/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                            <a href="#" class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/1/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                            <a href="#" class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/7/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title</h5>
+                            <p class="card-text">Author: Author Name</p>
+                            <p class="card-text">Description: A short description of the book goes here, providing an
+                                overview of the content and why it's worth reading.</p>
+                            <p class="card-text"><strong>Price: $19.99</strong></p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                            <a href="#" class="btn btn-outline-secondary">Add to Wishlist</a>
+                        </div>
+                    </div>
 
                 </div>
             </div>
+            <div class="text-center">
+                <a class="btn btn-primary">More</a>
+            </div>
         </div>
-    </section>
+
+        <div class="container mt-5">
+            <h2 class="mb-4">Top Sellers</h2>
+
+
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Seller name</h5>
+                            <p class="card-text">Rating: 4.8</p>
+                            <a href="#" class="btn btn-primary">View Profile</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Seller name</h5>
+                            <p class="card-text">Rating: 5</p>
+                            <a href="#" class="btn btn-primary">View Profile</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Seller name</h5>
+                            <p class="card-text">Rating: 4.3</p>
+                            <a href="#" class="btn btn-primary">View Profile</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="https://picsum.photos/id/0/367/267" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">Seller name</h5>
+                            <p class="card-text">Rating: 5</p>
+                            <a href="#" class="btn btn-primary">View Profile</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+                    <a class="btn btn-primary">More</a>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <div class="bg-white">
+        <div class="container">
+            <footer class="py-3 mt-3">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Books</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Categories</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sellers</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About Us</a></li>
+                </ul>
+                <p class="text-center text-muted">© 2024 Company, Inc</p>
+            </footer>
+        </div>
+    </div>
 
 </x-frontend-layout>
