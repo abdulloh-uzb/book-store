@@ -18,8 +18,8 @@
                 <h1>Book Store</h1>
             </div>
             <div class="auth">
-                <button class="btn btn-success">Login</button>
-                <button class="btn btn-success">Register</button>
+                <a class="btn btn-success" href="{{route('login')}}">Login</a>
+                <a class="btn btn-success" href="{{route('register')}}">Register</a>
             </div>
         </div>
     </header>
