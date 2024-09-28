@@ -1,59 +1,56 @@
-<x-auth-layout :title="'Kirish'">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="card-body login-card-body">
-        <p class="login-box-msg">Kirish</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
 
-        <form action="{{ route('login') }}" method="post">
-            @csrf
-            <div class="input-group mb-3">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"
-                    name="email" value="{{ old('email') }}">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                    </div>
-                </div>
-                @error('email')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+<body style="background-color: rgba(0, 0, 0, .1);">
+    <div class="d-flex justify-content-center">
+
+        <form class="border p-3 bg-white mt-5">
+            <h1 class="text-center">Login</h1>
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Email address</label>
             </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Parol"
-                    name="password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                        <label class="form-check-label" for="form2Example31"> Remember me </label>
                     </div>
+                </div>
+
+                <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-8">
-                    <div class="icheck-primary">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">
-                            Eslab qol
-                        </label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-block">Kirish</button>
-                </div>
-                <!-- /.col -->
+
+            <div class="text-center">
+                <button type="button" data-mdb-button-init data-mdb-ripple-init
+                    class="btn btn-primary btn-block mb-4">Sign
+                    in</button>
+
+                <p>Not a account? <a href="#!">Register</a></p>
             </div>
         </form>
-
-        <p class="mb-1">
-            <a href="forgot-password.html">Parolni unutdingizmi?</a>
-        </p>
-        <p class="mb-0">
-            <a href="{{ route('register') }}" class="text-center">Yangi akkaunt ochish</a>
-        </p>
-
-
-
     </div>
+</body>
 
-
-
-</x-auth-layout>
+</html>

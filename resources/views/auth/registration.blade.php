@@ -1,55 +1,63 @@
-<x-auth-layout :title="'Registratsiya'">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign up</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
 
-        <form action="{{ route('register') }}" method="post">
-            @csrf
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" name="username">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email" name="email">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Parol" name="password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Parolni tasdiqlang"
-                    name="password_confirmation">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <button type="submit" class="btn btn-primary btn-block">Ro'yxatdan o'tish</button>
-                </div>
+<body style="background-color: rgba(0, 0, 0, .1);">
+    <div class="d-flex justify-content-center">
+
+        <form class="border p-3 bg-white mt-5">
+            <h1 class="text-center">Registration</h1>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Name</label>
             </div>
 
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Username</label>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" />
+                <label class="form-label" for="form2Example1">Email address</label>
+            </div>
+
+   
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <a href="#!">Forgot password?</a>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" data-mdb-button-init data-mdb-ripple-init
+                    class="btn btn-primary btn-block mb-4">Sign
+                    in</button>
+
+                <p>Not a account? <a href="#!">Register</a></p>
+            </div>
         </form>
-
-
-
-        <p class="mb-0">
-            <a href="{{ route('login') }}" class="text-center">Akkauntingiz bormi?</a>
-        </p>
     </div>
-</x-auth-layout>
+</body>
+
+</html>
