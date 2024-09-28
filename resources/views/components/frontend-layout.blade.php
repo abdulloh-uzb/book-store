@@ -17,10 +17,16 @@
             <div class="logo">
                 <h1>Book Store</h1>
             </div>
+            @guest
             <div class="auth">
                 <a class="btn btn-success" href="{{route('login')}}">Login</a>
                 <a class="btn btn-success" href="{{route('register')}}">Register</a>
             </div>
+            @endguest
+
+            @auth
+            <a class="btn btn-danger">Logout</a>
+            @endauth
         </div>
     </header>
 

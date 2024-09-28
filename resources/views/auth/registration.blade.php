@@ -52,9 +52,9 @@
             <div class="text-center">
                 <button type="button" data-mdb-button-init data-mdb-ripple-init
                     class="btn btn-primary btn-block mb-4">Sign
-                    in</button>
+                    up</button>
 
-                <p>Not a account? <a href="#!">Register</a></p>
+                <p>Do you have account? <a href="{{route('login')}}">Sign in</a></p>
             </div>
         </form>
     </div>
