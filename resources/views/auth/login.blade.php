@@ -11,30 +11,27 @@
 
 <body style="background-color: rgba(0, 0, 0, .1);">
     <div class="d-flex justify-content-center">
-
-        <form class="border p-3 bg-white mt-5">
+        <!-- /resources/views/post/create.blade.php -->
+ 
+ 
+        <!-- Login -->
+        <form class="border p-3 bg-white mt-5" method="POST" action="{{route('login')}}">
+            @csrf
             <h1 class="text-center">Login</h1>
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" id="form2Example1" class="form-control" name="email" >
                 <label class="form-label" for="form2Example1">Email address</label>
             </div>
 
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="form2Example2" class="form-control" name="password">
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
 
             <!-- 2 column grid layout for inline styling -->
             <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                        <label class="form-check-label" for="form2Example31"> Remember me </label>
-                    </div>
-                </div>
 
                 <div class="col">
                     <!-- Simple link -->
@@ -43,13 +40,18 @@
             </div>
 
             <div class="text-center">
-                <button type="button" data-mdb-button-init data-mdb-ripple-init
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init
                     class="btn btn-primary btn-block mb-4">Sign
                     in</button>
 
                 <p>Not a account? <a href="#!">Register</a></p>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">credentials does not match</div>
+            @endif
         </form>
+        
+
     </div>
 </body>
 
