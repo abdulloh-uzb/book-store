@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer("quantity")->default(1);
 
             $table->foreignId("category_id")->constrained()->cascadeOnDelete();
-            $table->foreignId("user_id")->constrained()->cascadeOnDelete();
+            $table->foreignId("owner_id")->constrained('users')->cascadeOnDelete();
             $table->foreignId("author_id")->constrained()->cascadeOnDelete();
             $table->foreignId("format_id")->constrained()->cascadeOnDelete();
 
